@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#e7fbff",
+                        "surface-bright": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#004f59",
+                        "on-primary-fixed": "#001d32",
+                        "secondary-fixed": "#b3ebff",
+                        "inverse-surface": "#2e3132",
+                        "outline-variant": "#bfc7d1",
+                        "on-background": "#191c1d",
+                        "primary-container": "#0077b6",
+                        "on-secondary-fixed-variant": "#004e5f",
+                        "surface-tint": "#006399",
+                        "tertiary-fixed": "#9feffe",
+                        "on-error": "#ffffff",
+                        "tertiary": "#00626f",
+                        "inverse-primary": "#94ccff",
+                        "outline": "#707881",
+                        "on-tertiary-fixed": "#001f24",
+                        "surface-variant": "#e1e3e4",
+                        "surface-container": "#edeeef",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#001f27",
+                        "error": "#ba1a1a",
+                        "secondary": "#00677d",
+                        "on-surface-variant": "#404850",
+                        "tertiary-container": "#227c8a",
+                        "secondary-fixed-dim": "#4cd6fb",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#50d9fe",
+                        "primary": "#005d90",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#94ccff",
+                        "on-secondary-container": "#005c70",
+                        "surface-dim": "#d9dadb",
+                        "on-surface": "#191c1d",
+                        "tertiary-fixed-dim": "#83d3e1",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-fixed": "#cde5ff",
+                        "on-primary": "#ffffff",
+                        "surface": "#f8f9fa",
+                        "surface-container-highest": "#e1e3e4",
+                        "background": "#f8f9fa",
+                        "on-primary-container": "#f3f7ff",
+                        "on-primary-fixed-variant": "#004b74"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "sm": "8px",
+                        "unit": "4px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "xxl": "48px",
+                        "margin": "20px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .bubble-shadow {
+            box-shadow: 0 10px 40px -10px rgba(0, 119, 182, 0.15);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .water-drop-active {
+            font-variation-settings: 'FILL' 1;
+            color: #0077b6;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background min-h-screen pb-xxl">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/30 shadow-lg shadow-sky-900/5 flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-md">
+<button class="active:scale-95 transition-transform hover:bg-sky-50/50 rounded-full p-2">
+<span class="material-symbols-outlined text-sky-700">arrow_back</span>
+</button>
+<span class="text-xl font-black text-sky-700 font-['Plus_Jakarta_Sans'] tracking-tight">DiveHub</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="active:scale-95 transition-transform hover:bg-sky-50/50 rounded-full p-1">
+<img alt="User profile photo" class="w-10 h-10 rounded-full border-2 border-primary-container" data-alt="professional portrait of a smiling diver in soft studio lighting with a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt-RHnqM0or6B7M4Mh5Ht-3wKIvMHFFMPHyLvqZ6XEeimx0vyPHtYocJFeB3NK39cWJRfuSAFheMil3Ya68Hs7TNGQzxIPWAXzhb05xtfC-xT7WeCTwfU6YQKBflwxseI257kum7ZglY6pzhrJQlbxDla40pj_oqhT076QK85bNNftV-77DaOQgVoUQZI9VgtzyyJvFDRe9CfB44wlLdsh3DDJQFSk4CeMAqLGZ0pQ3aom_fMyTdvLnPG_ONMKDUK7xUfoaUIeda8"/>
+</button>
+<button class="active:scale-95 transition-transform hover:bg-sky-50/50 rounded-full p-2">
+<span class="material-symbols-outlined text-sky-600">notifications</span>
+</button>
+</div>
+</header>
+<main class="pt-[80px] px-margin max-w-5xl mx-auto">
+<!-- Hero Section -->
+<section class="mt-md relative group">
+<div class="relative w-full aspect-[16/10] overflow-hidden rounded-[32px] bubble-shadow border-4 border-white">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="underwater shot of a vibrant coral reef with schools of tropical fish and crystal clear blue water with rays of sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaHJ1HPfm-HOEu6g75Fqnk7qkwBrvilvBuidB50ueJT-wXlembnDtvgsar3Wf9Sl-MnyRD6rPpQehEK6pPfU7Z-qHqo2V5mDK8-1X7DdtzXazEWiwgb97LTTHqqnHSAfHzjpn92E_jUkz5JiT5Rw5-nFckqByS5EzXUOD9lrPfHy-p3nZ8rxSfXvKiYhXlsRz38NvucVN5zm_N2hdmlDnVecJpOA-q8XjKvQg8MtxA3IIfpKJ1Hk0VAzRB-mH88GHZW0kyMpOX3Nk"/>
+<div class="absolute bottom-0 left-0 w-full p-lg bg-gradient-to-t from-black/60 to-transparent">
+<span class="inline-block px-md py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-sm mb-sm uppercase">Marine Reserve</span>
+<h1 class="text-white font-headline-lg">Blue Hole Sanctuary</h1>
+<div class="flex items-center gap-sm text-white/90">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="font-label-lg">Belize, Caribbean Sea</span>
+</div>
+</div>
+<button class="absolute top-lg right-lg w-12 h-12 rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center text-white border border-white/50 active:scale-90 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<section class="mt-xl grid grid-cols-2 md:grid-cols-4 gap-md">
+<div class="bg-primary-container/10 p-lg rounded-[24px] flex flex-col items-center justify-center text-center border border-primary-container/20 hover:bg-primary-container/20 transition-colors cursor-default">
+<span class="material-symbols-outlined text-primary mb-sm" style="font-size: 32px;">straighten</span>
+<span class="text-primary font-headline-md leading-none">40m</span>
+<span class="text-on-surface-variant font-label-sm mt-xs">Max Depth</span>
+</div>
+<div class="bg-tertiary-container/10 p-lg rounded-[24px] flex flex-col items-center justify-center text-center border border-tertiary-container/20 hover:bg-tertiary-container/20 transition-colors cursor-default">
+<span class="material-symbols-outlined text-tertiary mb-sm" style="font-size: 32px;">visibility</span>
+<span class="text-tertiary font-headline-md leading-none">30m+</span>
+<span class="text-on-surface-variant font-label-sm mt-xs">Visibility</span>
+</div>
+<div class="bg-secondary-container/10 p-lg rounded-[24px] flex flex-col items-center justify-center text-center border border-secondary-container/20 hover:bg-secondary-container/20 transition-colors cursor-default">
+<span class="material-symbols-outlined text-secondary mb-sm" style="font-size: 32px;">thermostat</span>
+<span class="text-secondary font-headline-md leading-none">26°C</span>
+<span class="text-on-surface-variant font-label-sm mt-xs">Water Temp</span>
+</div>
+<div class="bg-surface-container-high p-lg rounded-[24px] flex flex-col items-center justify-center text-center border border-outline-variant/30 hover:bg-surface-container-highest transition-colors cursor-default">
+<span class="material-symbols-outlined text-on-surface-variant mb-sm" style="font-size: 32px;">waves</span>
+<span class="text-on-surface-variant font-headline-md leading-none">Mild</span>
+<span class="text-on-surface-variant font-label-sm mt-xs">Current</span>
+</div>
+</section>
+<!-- Action Buttons -->
+<section class="mt-xl flex flex-wrap gap-md">
+<button class="flex-1 min-w-[160px] bg-primary text-white font-label-lg py-md px-xl rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-sm active:scale-95 transition-all hover:brightness-110 relative overflow-hidden">
+<span class="material-symbols-outlined">rate_review</span>
+                Add Review
+                <div class="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform skew-x-12 animate-[shimmer_2s_infinite]"></div>
+</button>
+<button class="flex-1 min-w-[160px] border-2 border-secondary text-secondary font-label-lg py-md px-xl rounded-xl flex items-center justify-center gap-sm active:scale-95 transition-all hover:bg-secondary/5">
+<span class="material-symbols-outlined">add_a_photo</span>
+                Add Photos
+            </button>
+</section>
+<!-- Site Description -->
+<section class="mt-xxl">
+<h2 class="font-headline-md text-primary mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined">info</span>
+                Diver's Perspective
+            </h2>
+<div class="bg-white/50 backdrop-blur-sm p-lg rounded-[24px] border border-white/40 leading-relaxed text-on-surface-variant font-body-lg">
+<p>Hey there, deep-sea explorer! The Blue Hole is legendary for a reason. It's an ancient sinkhole that offers a vertical drop like no other. Keep an eye out for Caribbean Reef Sharks patrolling the stalactites. It’s a deep dive, so watch your computer and enjoy the silence of the abyss. Truly a bucket-list site!</p>
+</div>
+</section>
+<!-- Wildlife Bento -->
+<section class="mt-xxl">
+<h3 class="font-headline-md text-primary mb-md">Frequent Sightings</h3>
+<div class="flex flex-wrap gap-sm">
+<span class="px-lg py-sm bg-white rounded-full bubble-shadow border border-sky-100 flex items-center gap-sm font-label-lg text-sky-800">
+<span class="material-symbols-outlined text-sky-500">capture</span> Reef Shark
+                </span>
+<span class="px-lg py-sm bg-white rounded-full bubble-shadow border border-sky-100 flex items-center gap-sm font-label-lg text-sky-800">
+<span class="material-symbols-outlined text-sky-500">set_meal</span> Goliath Grouper
+                </span>
+<span class="px-lg py-sm bg-white rounded-full bubble-shadow border border-sky-100 flex items-center gap-sm font-label-lg text-sky-800">
+<span class="material-symbols-outlined text-sky-500">water_drop</span> Giant Rays
+                </span>
+<span class="px-lg py-sm bg-white rounded-full bubble-shadow border border-sky-100 flex items-center gap-sm font-label-lg text-sky-800">
+<span class="material-symbols-outlined text-sky-500">biotech</span> Brain Coral
+                </span>
+</div>
+</section>
+<!-- Review Section -->
+<section class="mt-xxl mb-xxl">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="font-headline-md text-primary">Diver Buzz</h2>
+<div class="flex items-center gap-sm mt-xs">
+<div class="flex text-primary">
+<span class="material-symbols-outlined water-drop-active">water_drop</span>
+<span class="material-symbols-outlined water-drop-active">water_drop</span>
+<span class="material-symbols-outlined water-drop-active">water_drop</span>
+<span class="material-symbols-outlined water-drop-active">water_drop</span>
+<span class="material-symbols-outlined text-sky-200">water_drop</span>
+</div>
+<span class="font-label-lg text-on-surface-variant">4.8 (124 reviews)</span>
+</div>
+</div>
+<button class="text-primary font-label-lg underline underline-offset-4 active:opacity-70 transition-opacity">See All</button>
+</div>
+<!-- Review Cards -->
+<div class="space-y-lg">
+<!-- Review 1 -->
+<div class="bg-white/80 p-lg rounded-[28px] bubble-shadow border border-white/60">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-md">
+<img alt="Reviewer 1" class="w-12 h-12 rounded-2xl object-cover border-2 border-secondary-container" data-alt="close-up portrait of a man with sunglasses and beach attire smiling warmly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtyn9gRWQ5HUIdW15KfNfNlvHmFDgBrkgDcQHPkKmyCY3JjnziVyxK_11wEaKM-6iLLXHP_bY_WUxe31o4O_we06LRFIlIMY4RdkO7L8LpDXBAVeeaUCUiJtDVa38Gt1ART1rVXARclUCyK9S-x3yhunql4tTdXP7FzfYFIsAFyxnjVdi_FjaznwL9iwCILocLxPQ6TNYfI_FYj_1vKbmsasFKm3lvdhyx4eirAVE6cPPr0O6fBydx67IY6L7dN58NVvgCL4bLSx0"/>
+<div>
+<p class="font-headline-md text-sm">Marco Polo</p>
+<p class="text-on-surface-variant text-xs">Dive Master • 2 days ago</p>
+</div>
+</div>
+<div class="flex">
+<span class="material-symbols-outlined water-drop-active text-[18px]">water_drop</span>
+<span class="material-symbols-outlined water-drop-active text-[18px]">water_drop</span>
+<span class="material-symbols-outlined water-drop-active text-[18px]">water_drop</span>
+<span class="material-symbols-outlined water-drop-active text-[18px]">water_drop</span>
+<span class="material-symbols-outlined water-drop-active text-[18px]">water_drop</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant">Visibility was insane today! Reached 35m and still could see the surface. The thermocline at 20m is quite sharp, so dress accordingly!</p>
+</div>
+<!-- Review 2 -->
+<div class="bg-white/80 p-lg rounded-[28px] bubble-shadow border border-white/60">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-md">
+<img alt="Reviewer 2" class="w-12 h-12 rounded-2xl object-cover border-2 border-secondary-container" data-alt="side profile of a happy young woman with windblown hair in a coastal setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe4Tev7TTZQlmylL7Gw9F0Pqw6xPlehj_cKijIzD4hPZQ6-qvAO6S79TM11IiLY1XXnOEmB6WdX1rqqswbX57W0IJEwSy8VH-OzFF2BZGEn34CA96kOeMc86EiJlA5aHQOgCPeSI7HvAhlTTRv6WGFivuR8hq1o0fBLWfhOtSuIuYMWTxSOxhUmb0B2KsnRQboZPXf0FLTeWPmzaBvAWLBMvWF0447D0fBiypXkDpyLizAvvAVd4eOHikcU1yGRrbM_bY3_XEYrAM"/>
+<div>
+<p class="font-headline-md text-sm">Sarah Deep</p>
+<p class="text-on-surface-variant text-xs">Advanced Diver • 1 week ago</p>
+</div>
+</div>
+<div class="flex">
+<span class="material-symbols-outlined water-drop-active text-[18px]">water_drop</span>
+<span class="material-symbols-outlined water-drop-active text-[18px]">water_drop</span>
+<span class="material-symbols-outlined water-drop-active text-[18px]">water_drop</span>
+<span class="material-symbols-outlined water-drop-active text-[18px]">water_drop</span>
+<span class="material-symbols-outlined text-sky-200 text-[18px]">water_drop</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface-variant">First time seeing a Reef Shark here. Definitely got my heart racing but felt very safe with our guide. The "bubble" effect at the stalactites is magical.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-8 bg-white/80 backdrop-blur-2xl border-t border-white/40 shadow-[0_-10px_40px_rgba(0,119,182,0.12)] rounded-t-[32px]">
+<a class="flex flex-col items-center justify-center text-sky-700 font-bold bg-sky-100 rounded-[20px] px-5 py-2 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-semibold">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-sky-500 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-semibold">Add</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-sky-500 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-semibold">Favorites</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 hover:text-sky-500 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-semibold">Profile</span>
+</a>
+</nav>
+</body></html>
