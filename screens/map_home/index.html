@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DiveHub - Explore Underwater Wonders</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .water-drop-marker {
+            width: 42px;
+            height: 42px;
+            border-radius: 0 50% 50% 50%;
+            transform: rotate(45deg);
+        }
+        .water-drop-content {
+            transform: rotate(-45deg);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#e7fbff",
+                    "surface-bright": "#f8f9fa",
+                    "on-tertiary-fixed-variant": "#004f59",
+                    "on-primary-fixed": "#001d32",
+                    "secondary-fixed": "#b3ebff",
+                    "inverse-surface": "#2e3132",
+                    "outline-variant": "#bfc7d1",
+                    "on-background": "#191c1d",
+                    "primary-container": "#0077b6",
+                    "on-secondary-fixed-variant": "#004e5f",
+                    "surface-tint": "#006399",
+                    "tertiary-fixed": "#9feffe",
+                    "on-error": "#ffffff",
+                    "tertiary": "#00626f",
+                    "inverse-primary": "#94ccff",
+                    "outline": "#707881",
+                    "on-tertiary-fixed": "#001f24",
+                    "surface-variant": "#e1e3e4",
+                    "surface-container": "#edeeef",
+                    "surface-container-high": "#e7e8e9",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#001f27",
+                    "error": "#ba1a1a",
+                    "secondary": "#00677d",
+                    "on-surface-variant": "#404850",
+                    "tertiary-container": "#227c8a",
+                    "secondary-fixed-dim": "#4cd6fb",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#50d9fe",
+                    "primary": "#005d90",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#94ccff",
+                    "on-secondary-container": "#005c70",
+                    "surface-dim": "#d9dadb",
+                    "on-surface": "#191c1d",
+                    "tertiary-fixed-dim": "#83d3e1",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f3f4f5",
+                    "inverse-on-surface": "#f0f1f2",
+                    "primary-fixed": "#cde5ff",
+                    "on-primary": "#ffffff",
+                    "surface": "#f8f9fa",
+                    "surface-container-highest": "#e1e3e4",
+                    "background": "#f8f9fa",
+                    "on-primary-container": "#f3f7ff",
+                    "on-primary-fixed-variant": "#004b74"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "16px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "sm": "8px",
+                    "unit": "4px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "xs": "4px",
+                    "xxl": "48px",
+                    "margin": "20px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-background overflow-hidden antialiased">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 z-50 flex justify-between items-center w-full px-6 py-4 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-white/30 dark:border-slate-800/50 shadow-lg shadow-sky-900/5">
+<div class="flex items-center gap-3 active:scale-95 transition-transform">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a smiling woman with sun-kissed skin and wet hair, warm natural lighting against a soft ocean background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0OeshCNit6cMi3ouWhfl9d17BF6QmWzZ9bPreE-t6Zc4p64a1EbZX894BKZ6MtIx5NMXmDbVpAoKj_iaTMh-jUt6-SJS9ms3RAnNG13eVpDU546UsITfVwT0R265222WJH9J9jKEPolxjZbvGCXqcvyQMhgflEfvL1jjPZK0LxN1wNrbhLYlGzesT9g-gXz91lZQ4gIaAnIR9uzv7m1n-YMxnvmd5IXhHnO7Y-7071mxZrY7jlFpiMIXximjtHBKscMv5FwJdmc0"/>
+</div>
+<span class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-xl font-black text-sky-700 dark:text-sky-400">DiveHub</span>
+</div>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-sky-50/50 dark:hover:bg-sky-900/20 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined text-sky-600 dark:text-sky-400" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-sky-50/50 dark:hover:bg-sky-900/20 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined text-sky-600 dark:text-sky-400" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Map Canvas -->
+<main class="relative w-full h-screen">
+<div class="absolute inset-0 bg-sky-100">
+<img class="w-full h-full object-cover opacity-60" data-alt="Simplified artistic map view of coastal blue waters with coral reef outlines and turquoise depths from high aerial perspective" data-location="Great Barrier Reef" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8T9wd9DBm6PNOjEHKkcbsgVbU-QGN1js5d8SR16vhGPcWHisuJsWCtTP1SzicRGvNjsqWzHGhAt5WiFgLKYcRqdlqKPoFjq1cEVVfHlM6l2qPie6v4d0ZB93YBwHGpFesZYbYzrYaML5azkksJImtlGGvYDgAUyjuwB-yQ7s7468K2-mRXYnALayxYZiwN9kl3DkcPOQD2cZxGlAEIqNTLYfS3BgriHPIWQfJXqeH6sBM_kMwN4cVF4LfnEbnykbC1_Mjn6SObuQ"/>
+<!-- Map Markers -->
+<!-- Marker 1 -->
+<div class="absolute top-[35%] left-[45%] flex flex-col items-center gap-1 active:scale-110 transition-transform cursor-pointer">
+<div class="water-drop-marker bg-primary-container shadow-xl shadow-primary-container/30 border-2 border-white flex items-center justify-center">
+<span class="material-symbols-outlined water-drop-content text-white text-sm" style="font-variation-settings: 'FILL' 1;">scuba_diving</span>
+</div>
+<div class="glass-panel px-3 py-1 rounded-full shadow-lg">
+<span class="text-label-sm font-label-sm text-primary">Blue Hole</span>
+</div>
+</div>
+<!-- Marker 2 -->
+<div class="absolute top-[20%] left-[25%] flex flex-col items-center gap-1 active:scale-110 transition-transform cursor-pointer">
+<div class="water-drop-marker bg-secondary-container shadow-xl shadow-secondary-container/40 border-2 border-white flex items-center justify-center">
+<span class="material-symbols-outlined water-drop-content text-on-secondary-container text-sm" style="font-variation-settings: 'FILL' 1;">waves</span>
+</div>
+<div class="glass-panel px-3 py-1 rounded-full shadow-lg">
+<span class="text-label-sm font-label-sm text-secondary">Coral Garden</span>
+</div>
+</div>
+<!-- Marker 3 -->
+<div class="absolute top-[55%] left-[70%] flex flex-col items-center gap-1 active:scale-110 transition-transform cursor-pointer">
+<div class="water-drop-marker bg-primary-container shadow-xl shadow-primary-container/30 border-2 border-white flex items-center justify-center">
+<span class="material-symbols-outlined water-drop-content text-white text-sm" style="font-variation-settings: 'FILL' 1;">sailing</span>
+</div>
+<div class="glass-panel px-3 py-1 rounded-full shadow-lg">
+<span class="text-label-sm font-label-sm text-primary">Shipwreck Bay</span>
+</div>
+</div>
+</div>
+<!-- FAB (Contextual for Map) -->
+<button class="fixed bottom-32 right-6 z-40 bg-primary-container text-white w-14 h-14 rounded-2xl shadow-[0_8px_30px_rgb(0,119,182,0.4)] flex items-center justify-center active:scale-90 transition-all">
+<span class="material-symbols-outlined text-[28px]" data-icon="my_location">my_location</span>
+</button>
+<!-- Large Friendly Bottom Sheet -->
+<section class="fixed bottom-0 left-0 w-full z-50 bg-white rounded-t-[40px] shadow-[0_-20px_60px_rgba(0,119,182,0.15)] max-h-[751px] transition-transform duration-500 ease-out translate-y-0">
+<div class="flex flex-col w-full h-full pb-28">
+<!-- Drag Handle -->
+<div class="flex justify-center py-4">
+<div class="w-12 h-1.5 bg-surface-variant rounded-full"></div>
+</div>
+<div class="px-6 pb-4 flex justify-between items-end">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight">Nearby Sites</h2>
+<p class="text-on-surface-variant font-body-md">3 sites found in your area</p>
+</div>
+<button class="text-primary font-label-lg flex items-center gap-1 hover:bg-sky-50 px-3 py-1.5 rounded-full transition-colors">
+                        View List <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</button>
+</div>
+<!-- Site Cards Horizontal Carousel -->
+<div class="flex overflow-x-auto gap-gutter px-6 py-2 snap-x snap-mandatory scroll-smooth">
+<!-- Site Card 1 -->
+<div class="flex-none w-[85%] snap-center">
+<div class="bg-surface-container-lowest rounded-[32px] overflow-hidden shadow-xl shadow-sky-900/5 border border-surface-variant/30 flex flex-col group">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Cinematic underwater shot of a diver floating near a vibrant coral wall with thousands of small orange fish and sun rays piercing the blue water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVth9yU2Vyj4i98V725dqO1CLcC2VgpRfKExIP8GrDgPTdT_w0x_V4fxXA-6GKTW7nQ5KRMZ0WRZHA9_na-mier4v1Q9A63JuDw3q1AYi6yWVeBXpzt4aRffHEUAUs5ApA4LxtOHF8cDW0c4vfrtosoG6g6H2gszTzivmTUilHeyU7Fy4Qf5QxAOkk5nGUwERwQ5SiN-ZC7uU6diOnYpVXhRv5C053i5b4ItpAzA06fYn_MpcRa6_rVuBhjAmPtPUViieJ0ATyQ0M"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-1.5 border border-white shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-sm font-label-sm text-secondary">Validated</span>
+</div>
+<div class="absolute bottom-4 left-4 flex gap-1">
+<span class="bg-primary-container/80 backdrop-blur text-white px-2.5 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">Adv. Open Water</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">The Great Blue Hole</h3>
+<div class="flex items-center gap-0.5 bg-secondary-container/20 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<span class="text-secondary font-bold text-sm">4.9</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-md line-clamp-2 mb-4">Explore the world's most iconic sinkhole. Crystal clear waters and stunning limestone formations await.</p>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">straighten</span>
+<span class="text-label-sm font-label-sm">40m max</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">thermostat</span>
+<span class="text-label-sm font-label-sm">28°C</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Site Card 2 -->
+<div class="flex-none w-[85%] snap-center">
+<div class="bg-surface-container-lowest rounded-[32px] overflow-hidden shadow-xl shadow-sky-900/5 border border-surface-variant/30 flex flex-col group">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Enchanting underwater scene of a massive sea turtle swimming through a bright green and yellow coral reef with soft blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1LUOo-ZV03vrls5wMRfhxy9xLyZJhuDsqz-qE0pl4mOHEBdCY-NnlRMov2ksti29FyiSkkdFAWSB5Pp1ipVcy_12zNFtHeds6MhSH_1_VQEPcnnn6YMmJAhLaOdQFNZS4EofnGZJWm8h2nex9Gg75lu9KxlKAEChSq2sBeXe6HmsuynPSlA0w1-M1HtnAwqSrYweHGrL48t-DpvCMby8QpN3lneGO_IkQz7-_hGLy6YKDEUcRD8cab-H_oF1oQvGeuLuVtoyClxs"/>
+<div class="absolute bottom-4 left-4 flex gap-1">
+<span class="bg-secondary-container/80 backdrop-blur text-on-secondary-container px-2.5 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">Beginner</span>
+</div>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-md text-headline-md text-on-surface">Turtle Terrace</h3>
+<div class="flex items-center gap-0.5 bg-secondary-container/20 px-2 py-1 rounded-full">
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<span class="text-secondary font-bold text-sm">4.7</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-md line-clamp-2 mb-4">A gentle slope famous for resident Green and Hawksbill turtles. Perfect for photography.</p>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">straighten</span>
+<span class="text-label-sm font-label-sm">12m max</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">thermostat</span>
+<span class="text-label-sm font-label-sm">29°C</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-[60] flex justify-around items-center px-4 pt-3 pb-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl border-t border-white/40 dark:border-slate-800/30 shadow-[0_-10px_40px_rgba(0,119,182,0.12)] rounded-t-[32px]">
+<a class="flex flex-col items-center justify-center bg-sky-100 dark:bg-sky-900/40 text-sky-700 dark:text-sky-200 rounded-[20px] px-5 py-2 active:scale-90 transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="map" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-semibold">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-sky-500 transition-colors active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-semibold">Add</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-sky-500 transition-colors active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-semibold">Favorites</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-sky-500 transition-colors active:scale-90 duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-semibold">Profile</span>
+</a>
+</nav>
+</body></html>

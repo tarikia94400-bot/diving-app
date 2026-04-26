@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        body {
+            background-color: #f8f9fa;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#e7fbff",
+                      "surface-bright": "#f8f9fa",
+                      "on-tertiary-fixed-variant": "#004f59",
+                      "on-primary-fixed": "#001d32",
+                      "secondary-fixed": "#b3ebff",
+                      "inverse-surface": "#2e3132",
+                      "outline-variant": "#bfc7d1",
+                      "on-background": "#191c1d",
+                      "primary-container": "#0077b6",
+                      "on-secondary-fixed-variant": "#004e5f",
+                      "surface-tint": "#006399",
+                      "tertiary-fixed": "#9feffe",
+                      "on-error": "#ffffff",
+                      "tertiary": "#00626f",
+                      "inverse-primary": "#94ccff",
+                      "outline": "#707881",
+                      "on-tertiary-fixed": "#001f24",
+                      "surface-variant": "#e1e3e4",
+                      "surface-container": "#edeeef",
+                      "surface-container-high": "#e7e8e9",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed": "#001f27",
+                      "error": "#ba1a1a",
+                      "secondary": "#00677d",
+                      "on-surface-variant": "#404850",
+                      "tertiary-container": "#227c8a",
+                      "secondary-fixed-dim": "#4cd6fb",
+                      "on-error-container": "#93000a",
+                      "error-container": "#ffdad6",
+                      "secondary-container": "#50d9fe",
+                      "primary": "#005d90",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#94ccff",
+                      "on-secondary-container": "#005c70",
+                      "surface-dim": "#d9dadb",
+                      "on-surface": "#191c1d",
+                      "tertiary-fixed-dim": "#83d3e1",
+                      "on-secondary": "#ffffff",
+                      "surface-container-low": "#f3f4f5",
+                      "inverse-on-surface": "#f0f1f2",
+                      "primary-fixed": "#cde5ff",
+                      "on-primary": "#ffffff",
+                      "surface": "#f8f9fa",
+                      "surface-container-highest": "#e1e3e4",
+                      "background": "#f8f9fa",
+                      "on-primary-container": "#f3f7ff",
+                      "on-primary-fixed-variant": "#004b74"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "sm": "8px",
+                      "unit": "4px",
+                      "md": "16px",
+                      "xl": "32px",
+                      "xs": "4px",
+                      "xxl": "48px",
+                      "margin": "20px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "label-lg": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "headline-xl": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "label-lg": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                      "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 flex justify-between items-center w-full px-6 py-4 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl border-b border-white/30 dark:border-slate-800/50 shadow-lg shadow-sky-900/5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container p-0.5">
+<img alt="User profile photo" class="w-full h-full object-cover rounded-full" data-alt="portrait of a young female scuba diver with salty hair and a warm smile, outdoor natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjzfnR1UG_nLip9-3ekBsUZA5aQEiRvxCKhDbLP2jfgAkkgMgoSoUUf7b4pwE--FfRyyjB_AAsW8JJCj5OCx6DXi8BoEJmlUmpKyEtNLuURDp0PASF8qCZy9d9NmReToKH7xG9UHnx2TzAjOFzLhBLtJTOT05C17hBezbbP9i_4mfnxYWnojGnmLb82BlETGHyzTky-JHrkKBAk9nZB43Yq0P1zrJ-QLbIcuKm7FWKyfBvoSpBG6R_RatyCRcUb5iOrpBPjK7HlWk"/>
+</div>
+<span class="text-xl font-black text-sky-700 dark:text-sky-400 font-['Plus_Jakarta_Sans'] tracking-tight">DiveHub</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-sky-600 dark:text-sky-400 hover:bg-sky-50/50 dark:hover:bg-sky-900/20 rounded-full transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-margin max-w-2xl mx-auto space-y-xl">
+<!-- Profile Header -->
+<section class="flex flex-col items-center text-center space-y-md">
+<div class="relative">
+<div class="w-32 h-32 rounded-full p-1.5 bg-gradient-to-tr from-primary-container via-secondary-container to-tertiary-fixed shadow-[0_10px_30px_rgba(0,119,182,0.25)]">
+<div class="w-full h-full rounded-full border-4 border-white overflow-hidden bg-surface-container">
+<img alt="Large avatar" class="w-full h-full object-cover" data-alt="Close-up portrait of a woman with adventurous spirit, soft sunlight, vibrant turquoise background mimicking ocean water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDORZpcT5fIBlBR_X5O3WoWj3sKFAJT8LRNDz0L5ciXnyL7alQ9Hpi4PceQ0Qk9qM8lBP08quNQvcHpBa8IMpjflRp8KtpjFoCs1DA0FYCDnho3YAfx4GGEnrn7lCKWpv5ZN3EvXO26nhWdk7O0brllLHeDEfmfpPmP4mwl9p_tU812kNsKE8hyoMCvRHQeHGPS6PZBuOQJsRN9x1GMwE4yClfjjTeWggexBMfHgyevjctOGjGVmD6Ef_EAvbIqwsad3ht_IIR0VR4"/>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 bg-primary-container text-on-primary-container p-2 rounded-full border-4 border-background shadow-lg">
+<span class="material-symbols-outlined text-[20px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="space-y-xs">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Alex Waters</h1>
+<p class="text-on-surface-variant font-body-md max-w-xs mx-auto">Master Diver • Marine Conservationist • Exploring the deep blue since 2018.</p>
+</div>
+<button class="flex items-center gap-2 bg-secondary-container text-on-secondary-container px-lg py-sm rounded-xl font-label-lg shadow-md active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+                Edit Profile
+            </button>
+</section>
+<!-- Stats Bento Grid -->
+<section class="grid grid-cols-2 gap-md">
+<div class="glass-card p-md rounded-xxl shadow-xl shadow-sky-900/5 flex flex-col items-center justify-center text-center space-y-xs">
+<div class="w-12 h-12 bg-sky-100 text-primary-container rounded-full flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-[28px]" data-icon="scuba_diving">scuba_diving</span>
+</div>
+<span class="text-headline-md font-headline-md text-primary">142</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Total Dives</span>
+</div>
+<div class="glass-card p-md rounded-xxl shadow-xl shadow-sky-900/5 flex flex-col items-center justify-center text-center space-y-xs">
+<div class="w-12 h-12 bg-cyan-100 text-secondary rounded-full flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-[28px]" data-icon="explore">explore</span>
+</div>
+<span class="text-headline-md font-headline-md text-secondary">24</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Sites Discovered</span>
+</div>
+<div class="glass-card p-md rounded-xxl shadow-xl shadow-sky-900/5 flex flex-col items-center justify-center text-center space-y-xs col-span-2 sm:col-span-1">
+<div class="w-12 h-12 bg-teal-100 text-tertiary rounded-full flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-[28px]" data-icon="photo_camera">photo_camera</span>
+</div>
+<span class="text-headline-md font-headline-md text-tertiary">856</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Photos Contributed</span>
+</div>
+<div class="glass-card p-md rounded-xxl shadow-xl shadow-sky-900/5 flex flex-col items-center justify-center text-center space-y-xs col-span-2 sm:col-span-1">
+<div class="w-12 h-12 bg-blue-100 text-primary-container rounded-full flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-[28px]" data-icon="military_tech">military_tech</span>
+</div>
+<span class="text-headline-md font-headline-md text-primary-container">Elite</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Contributor Level</span>
+</div>
+</section>
+<!-- Discovered Sites List -->
+<section class="space-y-lg">
+<div class="flex justify-between items-end px-unit">
+<div class="space-y-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">Discovered Sites</h2>
+<p class="text-label-lg font-label-lg text-on-surface-variant">Your latest underwater finds</p>
+</div>
+<button class="text-primary font-label-lg hover:underline">View All</button>
+</div>
+<div class="space-y-md">
+<!-- Site Card 1 -->
+<div class="glass-card p-sm rounded-xxl shadow-lg shadow-sky-900/5 flex gap-md items-center group active:scale-[0.98] transition-transform">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+<img alt="Blue Hole" class="w-full h-full object-cover" data-alt="underwater shot of a deep blue sea sinkhole with light beams penetrating the water and divers silhouettes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC8kxgoBkQ3Xp3eUShFg6mly7uxqm4ZxK9OGFncr05vvJmov63mGagQ7LRBAQI3h12UHxypEWA2SPLxbX1bhV4EJxZ9iKMoamc4t6Dhq9hbkzls20Hgjo2ExixRbW5tmM1PefNLEq833I5mNkFEdib5CZUDHrrO4K4684aS2hxCvZXsouW8qUrvBaDVtUhcElIbw7ZDmIAwqfAgZK8KWO9s3wasiYajRNfKRBrvltOFmTVqa4O8zpvM9t6AAJxklZEiL8StDD3TUA"/>
+</div>
+<div class="flex-1 space-y-xs pr-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[18px] text-on-surface">Sapphire Grotto</h3>
+<span class="text-tertiary material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-label-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
+                            Belize District
+                        </div>
+<div class="flex gap-2 pt-xs">
+<span class="bg-sky-50 text-sky-700 px-2 py-0.5 rounded-full text-[10px] font-bold border border-sky-100 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="waves">waves</span> 28m
+                            </span>
+<span class="bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full text-[10px] font-bold border border-teal-100 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="set_meal">set_meal</span> Turtles
+                            </span>
+</div>
+</div>
+</div>
+<!-- Site Card 2 -->
+<div class="glass-card p-sm rounded-xxl shadow-lg shadow-sky-900/5 flex gap-md items-center group active:scale-[0.98] transition-transform">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+<img alt="Coral Reef" class="w-full h-full object-cover" data-alt="vibrant coral reef ecosystem with colorful fish and soft branching corals under clear turquoise water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAMKhggUWfoD1zVyEFRhxg910yv3qfxmvKBDMLHhBbH9TZxdKHvMQcGHP6mfsg7NhMdWZqOrSOY5LZCTpKfOhAYVyT47Q4y33rcYkJ8z5ACuAP5Exy8F0KXWHUgL6dwSxQUevr4uq_k4p4_kRkB_T5IPgRadHwxI23V3uMP_dJHeR2icYAu0bsuF33TH6BqEfKHX5XDMVl-2QYX3lzAy-IIvyFu0jFczz2CPM7XnrFXmPKaVTNG7D0OyiWcVpagkhw2knQK0g4p2A"/>
+</div>
+<div class="flex-1 space-y-xs pr-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[18px] text-on-surface">Neon Gardens</h3>
+<span class="text-on-surface-variant material-symbols-outlined" data-icon="favorite">favorite</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-label-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
+                            Raja Ampat, ID
+                        </div>
+<div class="flex gap-2 pt-xs">
+<span class="bg-sky-50 text-sky-700 px-2 py-0.5 rounded-full text-[10px] font-bold border border-sky-100 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="waves">waves</span> 12m
+                            </span>
+<span class="bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full text-[10px] font-bold border border-teal-100 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="bug_report">bug_report</span> Nudibranch
+                            </span>
+</div>
+</div>
+</div>
+<!-- Site Card 3 -->
+<div class="glass-card p-sm rounded-xxl shadow-lg shadow-sky-900/5 flex gap-md items-center group active:scale-[0.98] transition-transform">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0">
+<img alt="Wreck Site" class="w-full h-full object-cover" data-alt="mysterious rusted shipwreck at the bottom of the ocean covered in sea life with sunlight filtering through water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx2BnDNNMtWNd3WkHJuDx16bBrpuBzXc_rxsAVpZsqOJlziXHpdgtN-RBsPNn1xmXOcuxbHKEFOSMI4F57fwvcnl58yOSFUkEnmlI8qt2EGsrT6B8TdJNOfMdqSgz6V4BOH9BXO2S3xK8hyP61qSFMy4KH6BwNDEIUsmUuhSlBumBFqsmMKajVzpPyaWCE3cVwYMC7ktP48sTrPWXyQUQS7BZG-BIHeU4y_aG8hZBHxS4662t08g4Vnd3zX0b053JFcdd4laEXj0s"/>
+</div>
+<div class="flex-1 space-y-xs pr-sm">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[18px] text-on-surface">Ghost Clipper</h3>
+<span class="text-tertiary material-symbols-outlined" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-label-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
+                            Key Largo, FL
+                        </div>
+<div class="flex gap-2 pt-xs">
+<span class="bg-sky-50 text-sky-700 px-2 py-0.5 rounded-full text-[10px] font-bold border border-sky-100 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="waves">waves</span> 35m
+                            </span>
+<span class="bg-teal-50 text-teal-700 px-2 py-0.5 rounded-full text-[10px] font-bold border border-teal-100 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="anchor">anchor</span> Wreck
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-3 pb-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl rounded-t-[32px] border-t border-white/40 dark:border-slate-800/30 shadow-[0_-10px_40px_rgba(0,119,182,0.12)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-sky-500 transition-colors active:scale-90 transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-semibold">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-sky-500 transition-colors active:scale-90 transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-semibold">Add</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-sky-500 transition-colors active:scale-90 transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-semibold">Favorites</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-sky-100 dark:bg-sky-900/40 text-sky-700 dark:text-sky-200 rounded-[20px] px-5 py-2 active:scale-90 transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[12px] font-semibold">Profile</span>
+</a>
+</nav>
+</body></html>
