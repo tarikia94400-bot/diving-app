@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native'
 import { supabase } from './services/supabase'
+
 export default function MapScreen() {
   const [sites, setSites] = useState([])
   const [loading, setLoading] = useState(true)
@@ -24,13 +25,11 @@ export default function MapScreen() {
         <Text style={styles.logo}>🤿</Text>
         <Text style={styles.title}>Sites de plongée</Text>
       </View>
-
       <View style={styles.mapPlaceholder}>
         <Text style={styles.mapText}>🌍</Text>
         <Text style={styles.mapLabel}>Carte interactive</Text>
         <Text style={styles.mapSub}>Mapbox sera intégré prochainement</Text>
       </View>
-
       <View style={styles.bottomSheet}>
         <Text style={styles.sectionTitle}>
           {loading ? 'Chargement...' : `${sites.length} sites disponibles`}
@@ -44,10 +43,7 @@ export default function MapScreen() {
                 <Text style={styles.siteName}>{item.name}</Text>
                 <Text style={styles.siteInfo}>{item.type} · {item.depth_max}m</Text>
               </View>
-              <Text style={[
-                styles.badge,
-                item.status === 'validated' ? styles.validated : styles.provisional
-              ]}>
+              <Text style={[styles.badge, item.status === 'validated' ? styles.validated : styles.provisional]}>
                 {item.status === 'validated' ? 'Validé' : 'Non vérifié'}
               </Text>
             </TouchableOpacity>
@@ -68,43 +64,16 @@ export default function MapScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#001B48' },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 20,
-    paddingTop: 50,
-    gap: 10,
-  },
+  header: { flexDirection: 'row', alignItems: 'center', padding: 20, paddingTop: 50, gap: 10 },
   logo: { fontSize: 24 },
   title: { color: 'white', fontSize: 20, fontWeight: '600' },
-  mapPlaceholder: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#0d2d5e',
-    margin: 16,
-    borderRadius: 20,
-  },
+  mapPlaceholder: { flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#0d2d5e', margin: 16, borderRadius: 20 },
   mapText: { fontSize: 64 },
   mapLabel: { color: 'white', fontSize: 18, fontWeight: '500', marginTop: 12 },
   mapSub: { color: 'rgba(255,255,255,0.4)', fontSize: 13, marginTop: 4 },
-  bottomSheet: {
-    backgroundColor: '#001B48',
-    padding: 16,
-    maxHeight: '45%',
-    borderTopWidth: 0.5,
-    borderTopColor: 'rgba(0,224,255,0.2)',
-  },
+  bottomSheet: { backgroundColor: '#001B48', padding: 16, maxHeight: '45%', borderTopWidth: 0.5, borderTopColor: 'rgba(0,224,255,0.2)' },
   sectionTitle: { color: 'white', fontSize: 16, fontWeight: '600', marginBottom: 12 },
-  card: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: 'rgba(255,255,255,0.07)',
-    borderRadius: 12,
-    padding: 12,
-    marginBottom: 8,
-  },
+  card: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'rgba(255,255,255,0.07)', borderRadius: 12, padding: 12, marginBottom: 8 },
   siteName: { color: 'white', fontSize: 14, fontWeight: '500' },
   siteInfo: { color: 'rgba(255,255,255,0.5)', fontSize: 12, marginTop: 2 },
   badge: { fontSize: 11, fontWeight: '600', paddingHorizontal: 8, paddingVertical: 3, borderRadius: 10 },
